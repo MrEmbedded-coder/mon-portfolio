@@ -216,76 +216,7 @@ footer {
 }
 
 /* ==========================================
-   6. PAGE À PROPOS (Flexbox Layout)
-   ========================================== */
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    padding-top: 2rem;
-}
-
-.about-text {
-    flex: 1; /* Prend 60% de l'espace environ */
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    text-align: justify;
-}
-
-.about-image {
-    flex: 0 0 350px; /* Largeur fixe pour la photo */
-}
-
-.image-placeholder {
-    width: 350px;
-    height: 450px;
-    background-color: #e2e8f0;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px dashed var(--primary-color);
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-/*Ajustement */
-.image-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 18px;
-    display: block;
-}
-
-/* On retire le texte ... */
-.image-placeholder {
-    border: none;
-    background-color: transparent;
-    overflow: hidden;
-}
-
-/* Responsive pour mobile : on empile les colonnes */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .about-image {
-        flex: 0 0 auto;
-        width: 100%;
-    }
-    
-    .image-placeholder {
-        width: 100%;
-        height: 300px;
-    }
-}
-
+   6. PAGE À PR
 /* ==========================================
    7. PAGE CONTACT (Form)
    ========================================== */
@@ -346,5 +277,51 @@ footer {
     .contact-section {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+}
+
+
+/* ==========================================
+   8. RESPONSIVE DESIGN (Consolidé)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    /* Correction de la Navigation */
+    nav ul {
+        flex-direction: column; 
+        gap: 0.8rem;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    header {
+        padding: 0.5rem 0;
+    }
+
+    /* Ajustement de la page À Propos */
+    .about-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .about-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+    
+    .image-placeholder {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* Ajustement de la page Contact */
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* Typographie globale mobile */
+    h1 {
+        font-size: 1.8rem;
     }
 }
